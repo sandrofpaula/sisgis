@@ -1,0 +1,13 @@
+ActionColumn.php
+
+
+protected function initDefaultButtons()
+    {
+        $this->initDefaultButton('view', 'eye-open',['class'=>'btn btn-info btn-xs']);
+        $this->initDefaultButton('update', 'pencil',['class'=>'btn btn-primary btn-xs']);
+        $this->initDefaultButton('delete', 'trash', [
+            'class'=>'btn btn-danger btn-xs',
+            'data-confirm' => Yii::t('yii', 'Deseja realmente excluir este item?'),
+            'data-method' => 'post',
+        ]);
+    }
