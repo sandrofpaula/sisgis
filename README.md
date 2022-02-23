@@ -25,10 +25,10 @@ Senha: 123456
  <meta>
 <br>...\sisadmin\vendor\yiisoft\yii2\grid\ActionColumn.php
 <br><br>
-<br>$this->initDefaultButton('view', 'eye-open',['class'=>'btn btn-info']);
-<br>$this->initDefaultButton('update', 'pencil',['class'=>'btn btn-primary']);
+<br>$this->initDefaultButton('view', 'eye-open',['class'=>'btn btn-info btn-sm']);
+<br>$this->initDefaultButton('update', 'pencil',['class'=>'btn btn-primary btn-sm']);
 <br>$this->initDefaultButton('delete', 'trash', [
-<br>'class'=>'btn btn-danger',
+<br>'class'=>'btn btn-danger btn-sm',
 <br>'data-confirm' => Yii::t('yii', 'Deseja realmente excluir este item?'),
 <br>'data-method' => 'post',
 <br>]);
