@@ -25,7 +25,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function tableName()
     {
-        return 'dbsisadmin.tb_usuario';
+        return 'tb_usuario';
     }
 
 
