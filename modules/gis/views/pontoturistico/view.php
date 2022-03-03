@@ -1,4 +1,9 @@
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-4bmvcyJRirX5Z63iwSMm-4BxNQQlIoU&callback=initMap"> </script>
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:600" type="text/css" rel="stylesheet" />
+<link href="../../../web/google_maps/estilo_autocomplete.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../../../web/google_maps/jquery.min.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-4bmvcyJRirX5Z63iwSMm-4BxNQQlIoU&callback=initialize"> </script>
+<script type="text/javascript" src="google_maps/jquery.min.js"></script>
+<script type="text/javascript" src="google_maps/jquery-ui.custom.min.js"></script>
 <script type="text/javascript">
     var geocoder;
     var map;
@@ -18,7 +23,7 @@
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
 
-        map = new google.maps.Map(document.getElementById("map"), options);
+        map = new google.maps.Map(document.getElementById("mapa"), options);
 
         geocoder = new google.maps.Geocoder();
 
@@ -56,14 +61,17 @@
                 }
             })
         }
+
         $("#btnEndereco").click(function() {
             if ($(this).val() != "")
                 carregarNoMapa($("#txtEndereco").val());
         })
+
         $("#txtEndereco").blur(function() {
             if ($(this).val() != "")
                 carregarNoMapa($(this).val());
         })
+
         google.maps.event.addListener(marker, 'drag', function() {
             geocoder.geocode({
                 'latLng': marker.getPosition()
@@ -77,6 +85,7 @@
                 }
             });
         });
+
         $("#txtEndereco").autocomplete({
             source: function(request, response) {
                 geocoder.geocode({
@@ -152,4 +161,6 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
 
 </div>
-<div id="map"></div><br><br>
+<div class="col-sm-12" style="height: 600px">
+            <div id="mapa" style="width: 100%; height: 100%"></div>
+        </div><br><br>
