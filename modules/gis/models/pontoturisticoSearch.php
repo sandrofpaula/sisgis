@@ -47,7 +47,7 @@ class pontoturisticoSearch extends Pontoturistico
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination'=>[
-                'pageSize'=>10
+                'pageSize'=>5
             ],
         ]);
 

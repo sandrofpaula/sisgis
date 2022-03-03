@@ -43,12 +43,12 @@ class Pontoturistico extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'ponto_turistico_cod_pk' => 'Ponto Turistico Cod Pk',
-            'ponto_turistico_nome' => 'Ponto Turistico Nome',
-            'ponto_turistico_descricao' => 'Ponto Turistico Descricao',
-            'ponto_turistico_endereço' => 'Ponto Turistico Endereço',
-            'ponto_turistico_latitude' => 'Ponto Turistico Latitude',
-            'ponto_turistico_longitude' => 'Ponto Turistico Longitude',
+            'ponto_turistico_cod_pk' => 'Código',
+            'ponto_turistico_nome' => 'Nome',
+            'ponto_turistico_descricao' => 'Descrição',
+            'ponto_turistico_endereço' => 'Busca pelo endereço',
+            'ponto_turistico_latitude' => 'Latitude',
+            'ponto_turistico_longitude' => 'Longitude',
         ];
     }
 }

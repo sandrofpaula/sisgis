@@ -4,6 +4,7 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-4bmvcyJRirX5Z63iwSMm-4BxNQQlIoU&callback=initialize"> </script>
 <script type="text/javascript" src="google_maps/jquery.min.js"></script>
 <script type="text/javascript" src="google_maps/jquery-ui.custom.min.js"></script>
+
 <script type="text/javascript">
     var geocoder;
     var map;
@@ -15,7 +16,7 @@
             var latlng = new google.maps.LatLng(<?php echo $model->ponto_turistico_latitude; ?>, <?php echo $model->ponto_turistico_longitude; ?>); //Manaus - Sede da SEMED
 
         <?php } else { ?>
-            var latlng = new google.maps.LatLng(-3.0932134, -60.01405110000002); //Manaus - Sede da SEMED
+            var latlng = new google.maps.LatLng(-3.1190275, -60.0217314); //Manaus - Sede da SEMED
         <?php } ?>
         var options = {
             zoom: 18,
@@ -145,9 +146,9 @@ use yii\jui\Dialog;
 		<div class="col-sm-12" style="height: 600px">
             <div id="mapa" style="width: 100%; height: 100%"></div>
         </div>
-	
+
 	<div class="form-group">
-		<?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+		<?= Html::submitButton('Salvar', ['class' => 'btn btn-success']) ?>
 	</div>
 
 	<?php ActiveForm::end(); ?>
