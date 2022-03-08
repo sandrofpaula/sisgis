@@ -109,6 +109,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <a class='btn btn-primary' onclick="Checar_checkbox()" name='visualizar' target='_blank'><i class="glyphicon glyphicon-globe"></i> Gerar Rota</a>
     <a class='btn btn-default' onclick="limpar_coordenadas()" name='visualizar' ><i class="glyphicon glyphicon-trash"></i> Limpar Rota</a>
+    <!--<a class='btn btn-success'  name='visualizar' ><i class="glyphicon glyphicon-map-marker"></i> Add coordenadas</a>-->
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
@@ -138,7 +139,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'ponto_turistico_nome',
                 'value' => 'ponto_turistico_nome',
                 'headerOptions' => ['style' => 'text-align: center;'],
-                'contentOptions' => ['style' => 'text-align: center; width:100px'],
+                'contentOptions' => ['style' => 'width:350px'],
 
                 'value' => function ($data) {
                     return $data->ponto_turistico_nome;
@@ -171,11 +172,31 @@ $this->params['breadcrumbs'][] = $this->title;
                      return 'Latitude <br>'.$data->ponto_turistico_latitude . '<br>'.'Longitude <br>'. $data->ponto_turistico_longitude;
                  },
              ],
+             /*[
+                'attribute' => 'COORDENADAS',
+                'value' => function ($model) {
+                     return \Yii::$app->formatter->asUrl('https://www.google.com/maps/dir/Current+Location/'.$model->ponto_turistico_latitude . ','. $model->ponto_turistico_longitude, ['target' => '_blank']);
+                 },
+                'format' => 'raw',
+            ],*/
 
             [
                 'class' => 'yii\grid\ActionColumn',
                 'headerOptions' => ['style' => 'text-align: center;'],
                 'contentOptions' => ['style' => 'text-align: center; width:150px'],
+                'template' => '<div class="btn-group btn-group-sm" role="group">{ponto--}{view}{update}{delete} </div>',
+                'buttons' => [
+                    'ponto' => function ($url, $model, $key) {
+                        return Html::a('<i class="glyphicon glyphicon-map-marker"></i>', ['coordenadas', 'id' => $model->ponto_turistico_cod_pk], [
+                            
+                            'class' => 'btn btn-warning btn-sm',
+                            //'target' => '_blank',
+                            'format' => 'raw',
+                            'data-toggle' => 'tooltip',
+                            'title' => 'Ponto'
+                        ]);
+                    },                    
+                ],
             ],
         ],
     ]); ?>

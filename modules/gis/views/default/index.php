@@ -28,7 +28,7 @@ $this->title = 'Admin';
 <div align="center">           
 <div class="site-index">
 	<div class="jumbotron">
-		<p><img src="<?php echo Yii::$app->request->baseUrl; ?>/images/logo_admin.png" width="300"></p>
+		<p><img src="<?php echo Yii::$app->request->baseUrl; ?>/images/logo_gis2.png" width="300"></p>
 		<!--<p style="color: #006b5c; font-size: 28px;">SISMAQWEB 2.0</p>-->
 		<br/>
             <!--

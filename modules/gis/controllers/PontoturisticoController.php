@@ -35,6 +35,7 @@ class PontoturisticoController extends Controller
      */
     public function actionIndex()
     {
+        echo '<script type="text/javascript">localStorage.clear(); </script>';
         $searchModel = new pontoturisticoSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
