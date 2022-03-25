@@ -1,7 +1,7 @@
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:600" type="text/css" rel="stylesheet" />
 <link href="../../../web/google_maps/estilo_autocomplete.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="../../../web/google_maps/jquery.min.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-4bmvcyJRirX5Z63iwSMm-4BxNQQlIoU&callback=initialize"> </script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY=initialize"> </script>
 <script type="text/javascript" src="google_maps/jquery.min.js"></script>
 <script type="text/javascript" src="google_maps/jquery-ui.custom.min.js"></script>
 
