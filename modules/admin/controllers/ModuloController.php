@@ -8,7 +8,7 @@ use app\modules\admin\models\moduloSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\filters\AccessControl;
 /**
  * ModuloController implements the CRUD actions for Modulo model.
  */
@@ -20,6 +20,20 @@ class ModuloController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['index','view','create','update','delete','findModel'],
+                'rules' => [
+                    [
+                        'actions' => ['index','view','create','update','delete','findModel'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+                // 'denyCallback' => function ($rule, $action) {
+                //     throw new \Exception('Você não está autorizado a acessar esta página');
+                // }
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

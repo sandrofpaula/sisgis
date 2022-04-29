@@ -46,6 +46,7 @@ $this->title = 'Admin';
             <?php
                 if(!Yii::$app->user->isGuest){
                     echo Html::a('Pontos Turísticos', ['pontoturistico/'], ['class' => 'btn-lightgrey']);
+                    echo Html::a('Arquivo'          , ['arquivo/'], ['class' => 'btn-lightgrey']);
                     //echo Html::a('Perfil', ['perfil/'], ['class' => 'btn-lightgrey']);
                   //  echo Html::a('Usuário', ['usuario/'], ['class' => 'btn-lightgrey']);
                     //echo '<br>usuario_cod_pk: '.Yii::$app->user->identity->usuario_cod_pk;
@@ -53,7 +54,6 @@ $this->title = 'Admin';
                 }
             
             ?>
-              <!--  <?= Html::a('Suporte', ['gis/'], ['class' => 'btn-lightgrey']) ?>-->
             </p>
     </div>   	
 </div>
