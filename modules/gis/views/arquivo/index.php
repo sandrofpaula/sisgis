@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\modules\gis\models\arquivoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Arquivos';
+$this->title = 'Anexar Arquivos Blob';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="arquivo-index">
@@ -33,16 +33,16 @@ $this->params['breadcrumbs'][] = $this->title;
             //'ponto_turistico_cod_fk',
             'arquivo_conteudo_nome',
             'arquivo_conteudo_tipo',
-            // [
-            //     'attribute' => 'arquivo_conteudo_size',
-            //     'value' => 'arquivo_conteudo_size',
-            //     'headerOptions'=>['style'=>'text-align: center;'],
-            //     'contentOptions'=>['style'=>'text-align: center; width:225px'],
-            //     'format' => 'html',
-            //     'value'=>function($data){
-            //         return $data->arquivo_conteudo_size.' bytes';
-            //     },
-            // ],
+            [
+                'attribute' => 'arquivo_conteudo_size',
+                'value' => 'arquivo_conteudo_size',
+                'headerOptions'=>['style'=>'text-align: center;'],
+                'contentOptions'=>['style'=>'text-align: center; width:225px'],
+                'format' => 'html',
+                'value'=>function($data){
+                    return $data->arquivo_conteudo_size.'bytes';
+                },
+            ],
             //'arquivo_conteudo',
 
 

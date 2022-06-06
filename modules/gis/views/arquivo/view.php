@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create Arquivo', ['create'], ['class' => 'btn btn-success']) ?>
         <!-- <?= Html::a('Downloads', ['download',  'id' => $model->arquivo_cod_pk], ['target' => '_blank','class' => 'btn btn-warning']) ?> -->
         <?= Html::a('Update', ['update', 'target' => '_blank','id' => $model->arquivo_cod_pk], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('View', ['view', 'id' => $model->arquivo_cod_pk], ['class' => 'btn btn-warning']) ?>
+        <!-- <?= Html::a('View', ['view', 'id' => $model->arquivo_cod_pk], ['class' => 'btn btn-warning']) ?> -->
         <?= Html::a('Delete', ['delete', 'id' => $model->arquivo_cod_pk], [
             'class' => 'btn btn-danger',
             'data' => [
@@ -37,7 +37,16 @@ $this->params['breadcrumbs'][] = $this->title;
             //'ponto_turistico_cod_fk',
             'arquivo_conteudo_nome',
             'arquivo_conteudo_tipo',          
-            'arquivo_conteudo_size',          
+            [
+                'attribute' => 'arquivo_conteudo_size',
+                'value' => 'arquivo_conteudo_size',
+                //'headerOptions'=>['style'=>'text-align: center;'],
+                //'contentOptions'=>['style'=>'text-align: center; width:225px'],
+                'format' => 'html',
+                'value'=>function($data){
+                    return $data->arquivo_conteudo_size.'bytes';
+                },
+            ],          
         ],
     ]) ?>
 

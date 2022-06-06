@@ -95,7 +95,7 @@ class ArquivoController extends Controller
                 //die;
                 //$model->saveAs();
                // $this->arquivo_conteudo = file_get_contents($file->tempName);
-                $tamanho = $file->size.' bytes';
+                $tamanho = $file->size.' ';
                 $model->arquivo_conteudo_nome = $file->name;
                 $model->arquivo_conteudo_tipo = $file->type;
                 $model->arquivo_conteudo_size = $tamanho;
@@ -140,7 +140,7 @@ class ArquivoController extends Controller
                 // die;
                 //$model->saveAs();
                // $this->arquivo_conteudo = file_get_contents($file->tempName);
-               $tamanho = $file->size.' bytes';
+               $tamanho = $file->size.' ';
                $model->arquivo_conteudo_nome = $file->name;
                $model->arquivo_conteudo_tipo = $file->type;
                $model->arquivo_conteudo_size = $tamanho; 
